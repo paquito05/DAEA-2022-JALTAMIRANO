@@ -21,9 +21,24 @@ namespace Lab02_01
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-           PrincipalMDI principal = new PrincipalMDI();
-           principal.Show();
-           this.Hide();
+
+            String usuario = "samu";
+            String password = "samu123";
+
+            Console.WriteLine(usuario);
+            Console.WriteLine(password);
+            
+            if (txtUsuario.Text.Equals(usuario) && txtPassword.Text.Equals(password)) 
+            {
+                PrincipalMDI principal = new PrincipalMDI();
+                principal.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o Password Incorrectos");
+
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
