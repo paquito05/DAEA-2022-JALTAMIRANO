@@ -68,12 +68,30 @@ namespace Lab02_01
                 txtUsuario.Focus();
             }
 
-            
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void chMostrarPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            
+            String Pass = txtPassword.Text;
+
+            if (chMostrarPassword.Checked)
+            {
+                txtPassword.UseSystemPasswordChar = false;
+                txtPassword.Text = Pass;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = true;
+                txtPassword.Text = Pass;
+                
+            }
         }
     }
 }

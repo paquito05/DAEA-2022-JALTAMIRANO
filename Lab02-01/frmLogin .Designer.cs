@@ -30,6 +30,7 @@ namespace Lab02_01
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chMostrarPassword = new System.Windows.Forms.CheckBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnIniciar = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.MaskedTextBox();
@@ -43,6 +44,7 @@ namespace Lab02_01
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Controls.Add(this.chMostrarPassword);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnIniciar);
             this.panel1.Controls.Add(this.txtPassword);
@@ -55,11 +57,22 @@ namespace Lab02_01
             this.panel1.Size = new System.Drawing.Size(300, 300);
             this.panel1.TabIndex = 0;
             // 
+            // chMostrarPassword
+            // 
+            this.chMostrarPassword.AutoSize = true;
+            this.chMostrarPassword.Location = new System.Drawing.Point(83, 191);
+            this.chMostrarPassword.Name = "chMostrarPassword";
+            this.chMostrarPassword.Size = new System.Drawing.Size(110, 17);
+            this.chMostrarPassword.TabIndex = 7;
+            this.chMostrarPassword.Text = "Mostrar Password";
+            this.chMostrarPassword.UseVisualStyleBackColor = true;
+            this.chMostrarPassword.CheckedChanged += new System.EventHandler(this.chMostrarPassword_CheckedChanged);
+            // 
             // btnCancelar
             // 
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Location = new System.Drawing.Point(157, 204);
+            this.btnCancelar.Location = new System.Drawing.Point(163, 228);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(108, 33);
             this.btnCancelar.TabIndex = 6;
@@ -73,7 +86,7 @@ namespace Lab02_01
             this.btnIniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnIniciar.Location = new System.Drawing.Point(43, 204);
+            this.btnIniciar.Location = new System.Drawing.Point(49, 228);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(108, 33);
             this.btnIniciar.TabIndex = 5;
@@ -85,9 +98,9 @@ namespace Lab02_01
             // 
             this.txtPassword.Location = new System.Drawing.Point(83, 164);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(141, 20);
             this.txtPassword.TabIndex = 4;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsuario
             // 
@@ -156,6 +169,7 @@ namespace Lab02_01
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chMostrarPassword;
     }
 }
 
