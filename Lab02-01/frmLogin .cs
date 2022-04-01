@@ -78,7 +78,7 @@ namespace Lab02_01
 
         private void chMostrarPassword_CheckedChanged(object sender, EventArgs e)
         {
-            
+           
             String Pass = txtPassword.Text;
 
             if (chMostrarPassword.Checked)
