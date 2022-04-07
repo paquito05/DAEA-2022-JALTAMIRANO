@@ -54,6 +54,7 @@ namespace lab03
                 MessageBox.Show("Conectado Satisfactoriamente");
                 btnDesconectar.Enabled = true;
                 btnUsuario.Enabled = true;
+                btnPersona.Enabled = true;
 
             }
             catch (Exception ex)
@@ -98,6 +99,7 @@ namespace lab03
                     conn.Close();
                     btnDesconectar.Enabled = false;
                     btnUsuario.Enabled = false;
+                    btnPersona.Enabled = false;
 
                     MessageBox.Show("Conexion cerrada Satisfactoiamente");
                 }
@@ -138,6 +140,13 @@ namespace lab03
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnPersona_Click(object sender, EventArgs e)
+        {
+            frmPersona persona = new frmPersona(conn);
+            persona.Show();
 
         }
     }

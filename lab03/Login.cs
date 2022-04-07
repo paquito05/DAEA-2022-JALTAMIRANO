@@ -47,7 +47,7 @@ namespace lab03
         private void btnIniciar_Click(object sender, EventArgs e)
         {
             String servidor = "DESKTOP-D3IMFSS\\LOCAL";
-            String bd = "db_lab03";
+            String bd = "School";
             String user = txtUsuario.Text;
             String pws = txtPassword.Text;
 
@@ -65,10 +65,23 @@ namespace lab03
                 {
                     if (conn.State == ConnectionState.Open)
                     {
-                        String sql = "SELECT * FROM tbl_usuario WHERE usuario_nombre = '" +
-                                        user + "' AND usuario_password = '" + pws + "'";
+                       
 
-                        SqlCommand cmd = new SqlCommand(sql, conn);
+                        SqlCommand cmd = new SqlCommand();
+                        cmd.CommandText = "LoginUsuario";
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Connection = conn;
+
+                        SqlParameter param1 = new SqlParameter();
+                        param1.ParameterName = "@usuario_nombre";
+                        param1.Value = user;
+                        SqlParameter param2 = new SqlParameter();
+                        param2.ParameterName = "@usuario_password";
+                        param2.Value = pws;
+
+                        cmd.Parameters.Add(param1);
+                        cmd.Parameters.Add(param2);
+
                         SqlDataReader reader = cmd.ExecuteReader();
 
                         DataTable dt = new DataTable();
@@ -78,8 +91,8 @@ namespace lab03
 
                         if (Nusuario == 1)
                         {
-                            Usuario usuario = new Usuario(conn);
-                            usuario.Show();
+                            frmPersona persona = new frmPersona(conn);
+                            persona.Show();
                             this.Hide();
                         }
                         else 
