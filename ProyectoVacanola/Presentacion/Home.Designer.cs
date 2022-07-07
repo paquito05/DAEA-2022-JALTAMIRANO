@@ -178,6 +178,7 @@ namespace Presentacion
             this.mnuReporCompra.Name = "mnuReporCompra";
             this.mnuReporCompra.Size = new System.Drawing.Size(184, 22);
             this.mnuReporCompra.Text = "Reporte de Compras";
+            this.mnuReporCompra.Click += new System.EventHandler(this.mnuReporCompra_Click);
             // 
             // reporteDeConsumoToolStripMenuItem
             // 

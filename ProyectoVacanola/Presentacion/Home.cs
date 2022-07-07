@@ -69,6 +69,12 @@ namespace Presentacion
 
         private void mnuProRegiCompra_Click(object sender, EventArgs e)
         {
+
+
+            foreach (Form childForm in MdiChildren)
+            {
+                childForm.Close();
+            }
             regisCompra regisCompra = new regisCompra();
             regisCompra.MdiParent = this;
             regisCompra.Show();
@@ -76,6 +82,10 @@ namespace Presentacion
 
         private void registrarConsumoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            foreach (Form childForm in MdiChildren)
+            {
+                childForm.Close();
+            }
             AgregarConsumo AgregarConsumo = new AgregarConsumo();
             AgregarConsumo.MdiParent = this;
             AgregarConsumo.Show();
@@ -100,6 +110,11 @@ namespace Presentacion
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void mnuReporCompra_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
